@@ -53,13 +53,13 @@ class HelloWorldService(ServiceBase):
 		#dictresult = {'total_crime': total_crime}
 		crime_type_count={}
 
-		dictresult["Assault"]=Assault
-		dictresult["Arrest"]=Arrest
-		dictresult["Other"]=Other
-		dictresult["Burglary"]=Burglary
-		dictresult["Theft"]=Theft
-		dictresult["total_crime"]=total_crime
-		dictresult["total_crime"]=Robbery
+		crime_type_count["Assault"]=Assault
+		crime_type_count["Arrest"]=Arrest
+		crime_type_count["Other"]=Other
+		crime_type_count["Burglary"]=Burglary
+		crime_type_count["Theft"]=Theft
+		crime_type_count["total_crime"]=total_crime
+		crime_type_count["total_crime"]=Robbery
 
 		
 
@@ -104,14 +104,14 @@ class HelloWorldService(ServiceBase):
 
 		event_time_count={}
 
-		dictresult["12:01am-3am"]=count12
-		dictresult["3:01am-6am"]=count3
-		dictresult["6:01am-9am"]=count6
-		dictresult["9:01am-12noon"]=count9
-		dictresult["12:01pm-3pm"]=count1212
-		dictresult["3:01pm-6pm"]=count33
-		dictresult["6:01pm-9pm"]=count66
-		dictresult["9:01pm-12midnight"]=count99
+		event_time_count["12:01am-3am"]=count12
+		event_time_count["3:01am-6am"]=count3
+		event_time_count["6:01am-9am"]=count6
+		event_time_count["9:01am-12noon"]=count9
+		event_time_count["12:01pm-3pm"]=count1212
+		event_time_count["3:01pm-6pm"]=count33
+		event_time_count["6:01pm-9pm"]=count66
+		event_time_count["9:01pm-12midnight"]=count99
 
 		#yield '12:01am-3am: %s'%count12 
 		#yield '3:01am-6am: %s'%count3
@@ -155,8 +155,8 @@ class HelloWorldService(ServiceBase):
 
 		
 		c = Counter(stringlist)
-		#dictresult[crime_type_count]=crime_type_count
-		#dictresult[event_time_count]=event_time_count
+		dictresult["crime_type_count"]=crime_type_count
+		dictresult["event_time_count"]=event_time_count
 		#yield 'most common: %s'%c.most_common(3)
 		dictresult["the_most_dangerous_streets"]=c.most_common(3)
 		yield ' %s'%dictresult
